@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: pop;
+            src: url(./Fonts/Poppins-Medium.ttf);
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: pop;
+            flex-direction: column;
+            position: relative;
+            bottom: 200px;
+        }
+
+        .head {
+            text-align: center;
+        }
+
+        .head_1 {
+            font-size: 30px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .head_1 span {
+            color: #ff988d;
+        }
+
+        .head_2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 3px;
+        }
+
+        ul {
+            display: flex;
+            margin-top: 80px;
+        }
+
+        ul li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        ul li .icon {
+            font-size: 35px;
+            color: #ffb1a9;
+            margin: 0 60px;
+        }
+
+        ul li .text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ff9387;
+        }
+
+
+
+        ul li .progress {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(240, 231, 231, 0.781);
+            margin: 14px 0;
+            display: grid;
+            place-items: center;
+            color: #000000;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progress::after {
+            content: " ";
+            position: absolute;
+            width: 125px;
+            height: 5px;
+            background-color: rgba(107, 63, 63, 0.781);
+            right: 30px;
+        }
+
+        .one::after {
+            width: 0;
+            height: 0;
+        }
+
+        ul li .progress .uil {
+            display: none;
+        }
+
+        ul li .progress p {
+            font-size: 13px;
+        }
+
+
+
+        ul li .active {
+            background-color: #ff4732;
+            display: grid;
+            place-items: center;
+        }
+
+        li .active::after {
+            background-color: #ff4732;
+        }
+
+        ul li .active p {
+            display: none;
+        }
+
+        ul li .active .uil {
+            font-size: 20px;
+            display: flex;
+        }
+
+        .he1 {
+            color: gold;
+            font-family: 'Roboto Slab', serif;
+            position: absolute;
+            top: 20px;
+            float: right;
+            right: 600px;
+        }
+
+        .profile {
+            position: absolute;
+            right: 15px;
+            top: 35px;
+        }
+        nav{
+            position: relative;
+            bottom: 70px;
+            left: 20px;
+        }
+
+        nav ul li {
+            float: left;
+            padding: 25px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            font-family: 'Roboto Slab', serif;
+            text-decoration: none;
+        }
+
+        .navgar ul li a:hover {
+            color: red;
+        }
+
+
+        /* --------------------------Responsive Css -------------------- */
+
+        @media (max-width: 980px) {
+            ul {
+                flex-direction: column;
+            }
+
+            ul li {
+                flex-direction: row;
+            }
+
+            ul li .progress {
+                margin: 0 30px;
+            }
+
+            .progress::after {
+                width: 5px;
+                height: 55px;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: -1;
+            }
+
+            .one::after {
+                height: 0;
+            }
+
+            ul li .icon {
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width:600px) {
+            .head .head_1 {
+                font-size: 24px;
+            }
+
+            .head .head_2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script>
+
+        const one = document.querySelector(".one");
+        const two = document.querySelector(".two");
+        const three = document.querySelector(".three");
+        const four = document.querySelector(".four");
+        const five = document.querySelector(".five");
+
+        one.onclick = function () {
+            one.classList.add("active");
+            two.classList.remove("active");
+            three.classList.remove("active");
+            four.classList.remove("active");
+            five.classList.remove("active");
+        }
+
+        two.onclick = function () {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.remove("active");
+            four.classList.remove("active");
+            five.classList.remove("active");
+        }
+        three.onclick = function () {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.add("active");
+            four.classList.remove("active");
+            five.classList.remove("active");
+        }
+        four.onclick = function () {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.add("active");
+            four.classList.add("active");
+            five.classList.remove("active");
+        }
+        five.onclick = function () {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.add("active");
+            four.classList.add("active");
+            five.classList.add("active");
+        }
+    </script>
+</head>
+
+<body>
+    <img src="https://media.istockphoto.com/id/1207784997/vector/illustration-for-the-golden-globe-golden-globe-with-a-laurel-wreath-and-stars.jpg?s=612x612&w=0&k=20&c=sU8W4tbioBXyHmp3786_kZQXRnysNKO6563EK2AP9Rc="
+        width="100px" height="100px">
+
+    <h1 class="he1">GLOBAL FOOD</h1>
+    
+    <a class="profile" href="###"><img src="https://img.freepik.com/free-icon/user_318-159711.jpg" width="50px"
+            height="50px"></a>
+    <nav class="navgar">
+
+
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="sriLCart.html">SRILANKAN FOOD</a></li>
+            <li><a href="koreanCart.html">KOREAN FOOD</a></li>
+            <li><a href="indianCart.html">INDIAN FOOD</a></li>
+            <li><a href="cheneCart.html">CHINESE FOOD</a></li>
+            <li><a href="ItalicCart.html">ITALIAN FOOD</a></li>
+            <li><a href="FastCart.html">FAST FOOD</a></li>
+            <li><a href="desertCart.html">DESERT</a></li>
+            <li><a href="ContactUs.html">CONTACT US</a></li>
+
+        </ul>
+
+    </nav>
+    <div class="main">
+
+        <div class="head">
+            <p class="head_1">GLOBAL FOOD <span>ORDER TRAKING</span></p>
+            <p class="head_2">Check your order </p>
+        </div>
+
+        <ul>
+            <li>
+                <i class="icon uil uil-capture"></i>
+                <div class="progress one">
+                    <p>1</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Add To Cart</p>
+            </li>
+            <li>
+                <i class="icon uil uil-clipboard-notes"></i>
+                <div class="progress two">
+                    <p>2</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Fill Details</p>
+            </li>
+            <li>
+                <i class="icon uil uil-credit-card"></i>
+                <div class="progress three">
+                    <p>3</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Make Payment</p>
+            </li>
+            <li>
+                <i class="icon uil uil-exchange"></i>
+                <div class="progress four">
+                    <p>4</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Order in Progress</p>
+            </li>
+            <li>
+                <i class="icon uil uil-map-marker"></i>
+                <div class="progress five">
+                    <p>5</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Order Arrived</p>
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
